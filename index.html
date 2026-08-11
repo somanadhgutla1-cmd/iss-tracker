@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ISS Tracker & Astronaut Finder</title>
+
+        <!--Leaflet CSS for maps-->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <header>
+            <h1>🚀 ISS Space Tracker</h1>
+            <p>Live Coordinates & Astronauts in Orbit</p>
+        </header>
+
+        <main class="container">
+            <!-- Map Container-->
+             <div id="map"></div>
+
+             <!-- Info Panel-->
+              <section class="info-panel">
+                <div class="card">
+                    <h2>ISS Location</h2>
+                    <p><strong>Latitude:</strong> <span id="lat">Loading...</span></p>
+                    <p><strong>Longitude:</strong> <span id="lon">Loading.../span></p>
+                </div>
+
+                <div class="card">
+                    <h2>People in Space (<span id="astro-count">0</span></h2>
+                    <ul id="astro-list">
+                        <li>Loading astronaut list...</li>
+                    </ul>
+                </div>
+              </section>
+        </main>
+
+        <!-- Leaflet JS for map logic-->
+         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+         <script src="script.js"></script>
+    </body>
+    </html>
