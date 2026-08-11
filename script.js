@@ -1,21 +1,13 @@
 // 1.Initialize the Leaflet Map Centered on coordinated [0,0]
 const map = L.map('map').setView([0,0], 2);
 
-//Add OpenStreetMap titles (frame map layer)
-L.titlelayer('https://{s}.title.openstreetmap.org/{z}/{x}/{y}.png', {
+//Add OpenStreetMap title layer
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
     attribution: '© OpenStreetMap contributors'
 }).addTo(map);
 
-//Custom ISS Icon
-const issIcon = L.icon({
-    iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d0/International_Space_Station.svg',
-    iconSize: [50, 32]
-    iconAnchor: [25, 16]
-});
-
-//Create a marker on the map with the custom icon
-const marker = L.marker([0, 0], { icon: issIcon}).addTo(map);
-
+//Standard default pin marker (avoids syntax errors with custom icon objects)
+const marker = L.marker([0,0]).addTo(map);
 // 2. Function to fetch live ISS position
 async function getISSPosition() {
     try {
